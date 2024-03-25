@@ -141,13 +141,33 @@ doctype_js = {
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
+doc_events = {
 #	"*": {
 #		"on_update": "method",
 #		"on_cancel": "method",
 #		"on_trash": "method"
 #	}
-# }
+	"Item": {
+		"on_update": "qubix_cnf.qubix_cnf.doctype.qubix_integration_setting.qubix_integration_setting.sync_master",		
+	},
+    "Item Group": {
+		"on_update": "qubix_cnf.qubix_cnf.doctype.qubix_integration_setting.qubix_integration_setting.sync_master",		
+	},
+    "UOM": {
+		"on_update": "qubix_cnf.qubix_cnf.doctype.qubix_integration_setting.qubix_integration_setting.sync_master",		
+	},
+    "Warehouse": {
+		"on_update": "qubix_cnf.qubix_cnf.doctype.qubix_integration_setting.qubix_integration_setting.sync_master",		
+	},
+    "Customer": {
+		"on_update": "qubix_cnf.qubix_cnf.doctype.qubix_integration_setting.qubix_integration_setting.sync_master",		
+	},
+    "Customer Group": {
+		"on_update": "qubix_cnf.qubix_cnf.doctype.qubix_integration_setting.qubix_integration_setting.sync_master",		
+	},
+	
+}
+
 
 # Scheduled Tasks
 # ---------------

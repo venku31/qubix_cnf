@@ -1,0 +1,327 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "SPAP.####",
+ "creation": "2023-09-27 15:07:58.344572",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "customer",
+  "customer_name",
+  "amended_from",
+  "state",
+  "hospital",
+  "hospital_name",
+  "old_lead_id",
+  "territory",
+  "hospitals_name",
+  "type",
+  "payment_type",
+  "column_break_zactm",
+  "company",
+  "date",
+  "manager_id",
+  "manager_name",
+  "manager_email",
+  "manager_designation",
+  "reporting_manager_name",
+  "reporting_manager_designation",
+  "rm_email",
+  "bde_sp",
+  "section_break_ouhxj",
+  "set_warehouse",
+  "column_break_nxjot",
+  "price_list",
+  "section_break_3hxqu",
+  "spap_item_details",
+  "section_break_zejxk",
+  "total_qty",
+  "column_break_n335m",
+  "total_amount",
+  "section_break_n6owg",
+  "sales_taxes_and_charges_template",
+  "get_taxes",
+  "taxes",
+  "section_break_gemzq",
+  "cash_discount",
+  "column_break_cxpx8",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "fetch_from": "customer.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Special Price Approval Portal",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fetch_from": "customer.custom_state",
+   "fieldname": "state",
+   "fieldtype": "Data",
+   "label": "State"
+  },
+  {
+   "fieldname": "hospital",
+   "fieldtype": "Link",
+   "label": "Hospital",
+   "options": "Lead"
+  },
+  {
+   "fetch_from": "hospital.company_name",
+   "fieldname": "hospital_name",
+   "fieldtype": "Data",
+   "label": "Hospital Name"
+  },
+  {
+   "fetch_from": "hospital.old_lead_id",
+   "fieldname": "old_lead_id",
+   "fieldtype": "Data",
+   "label": "Old Lead ID"
+  },
+  {
+   "fetch_from": "hospital.custom_lead_territory",
+   "fieldname": "territory",
+   "fieldtype": "Data",
+   "label": "Territory"
+  },
+  {
+   "fieldname": "hospitals_name",
+   "fieldtype": "Data",
+   "label": "Hospitals Name"
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "label": "Type",
+   "options": "\nTrade\nSpecial"
+  },
+  {
+   "fieldname": "column_break_zactm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "payment_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Payment Type",
+   "options": "\nAdvance\nPDC"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "manager_id",
+   "fieldtype": "Link",
+   "label": "Manager ID",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "manager_id.employee_name",
+   "fieldname": "manager_name",
+   "fieldtype": "Data",
+   "label": "Manager Name"
+  },
+  {
+   "fetch_from": "manager_id.company_email",
+   "fieldname": "manager_email",
+   "fieldtype": "Data",
+   "label": "Manager Email",
+   "options": "Email"
+  },
+  {
+   "fetch_from": "manager_id.designation",
+   "fieldname": "manager_designation",
+   "fieldtype": "Data",
+   "label": "Manager Designation"
+  },
+  {
+   "fetch_from": "manager_id.custom_reporting_manager_name",
+   "fieldname": "reporting_manager_name",
+   "fieldtype": "Data",
+   "label": "Reporting Manager Name"
+  },
+  {
+   "fetch_from": "manager_id.custom_reporting_manager_designation",
+   "fieldname": "reporting_manager_designation",
+   "fieldtype": "Data",
+   "label": "Reporting Manager Designation"
+  },
+  {
+   "fetch_from": "manager_id.custom_rm_email",
+   "fieldname": "rm_email",
+   "fieldtype": "Data",
+   "label": "RM Email"
+  },
+  {
+   "fieldname": "bde_sp",
+   "fieldtype": "Link",
+   "label": "Sales Person",
+   "options": "Sales Person"
+  },
+  {
+   "fieldname": "section_break_ouhxj",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:(user==\"shantha.r@qubixmedicare.com\")",
+   "fieldname": "set_warehouse",
+   "fieldtype": "Link",
+   "label": "Set Warehouse",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "column_break_nxjot",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "General Trade Price",
+   "depends_on": "doc.workflow_state==\"Approval Pending From HO\"",
+   "fieldname": "price_list",
+   "fieldtype": "Link",
+   "label": "Price List",
+   "options": "Price List"
+  },
+  {
+   "fieldname": "section_break_3hxqu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "spap_item_details",
+   "fieldtype": "Table",
+   "label": "SPAP Item Details",
+   "options": "SPAP Item Details"
+  },
+  {
+   "fieldname": "section_break_zejxk",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_qty",
+   "fieldtype": "Float",
+   "label": "Total Qty"
+  },
+  {
+   "fieldname": "column_break_n335m",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount"
+  },
+  {
+   "fieldname": "section_break_n6owg",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:(user==\"shantha.r@qubixmedicare.com\")",
+   "fieldname": "sales_taxes_and_charges_template",
+   "fieldtype": "Link",
+   "label": "Sales Taxes and Charges Template",
+   "options": "Sales Taxes and Charges Template"
+  },
+  {
+   "depends_on": "eval:(user==\"shantha.r@qubixmedicare.com\")",
+   "fieldname": "get_taxes",
+   "fieldtype": "Button",
+   "label": "Get Taxes"
+  },
+  {
+   "depends_on": "eval:(user==\"shantha.r@qubixmedicare.com\")",
+   "fieldname": "taxes",
+   "fieldtype": "Table",
+   "label": "Taxes",
+   "options": "Sales Taxes and Charges"
+  },
+  {
+   "fieldname": "section_break_gemzq",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:doc.payment_type==\"Advance\"",
+   "fieldname": "cash_discount",
+   "fieldtype": "Link",
+   "label": "Cash Discount",
+   "options": "Cash Discount"
+  },
+  {
+   "fieldname": "column_break_cxpx8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Data",
+   "label": "Remarks"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [
+  {
+   "group": "Sales Order",
+   "link_doctype": "Sales Order",
+   "link_fieldname": "custom_special_price_order_no"
+  }
+ ],
+ "modified": "2023-10-28 11:27:17.091110",
+ "modified_by": "Administrator",
+ "module": "Qubix Cnf",
+ "name": "Special Price Approval Portal",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "ASM",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

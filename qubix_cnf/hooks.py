@@ -156,7 +156,7 @@ doc_events = {
     "UOM": {
 		"on_update": "qubix_cnf.qubix_cnf.doctype.qubix_integration_setting.qubix_integration_setting.sync_master",		
 	},
-    "Warehouse": {
+    "Address": {
 		"on_update": "qubix_cnf.qubix_cnf.doctype.qubix_integration_setting.qubix_integration_setting.sync_master",		
 	},
     "Customer": {
@@ -165,7 +165,18 @@ doc_events = {
     "Customer Group": {
 		"on_update": "qubix_cnf.qubix_cnf.doctype.qubix_integration_setting.qubix_integration_setting.sync_master",		
 	},
-	
+    "Contact": {
+		"on_update": "qubix_cnf.qubix_cnf.doctype.qubix_integration_setting.qubix_integration_setting.sync_master",		
+	},
+	"Batch": {
+		"on_update": "qubix_cnf.qubix_cnf.doctype.qubix_integration_setting.qubix_integration_setting.sync_master",		
+	},
+    "Item Price": {
+		"on_update": "qubix_cnf.qubix_cnf.doctype.qubix_integration_setting.qubix_integration_setting.sync_master",		
+	},
+    "Sales Person": {
+		"on_update": "qubix_cnf.qubix_cnf.doctype.qubix_integration_setting.qubix_integration_setting.sync_master",		
+	},
 }
 
 

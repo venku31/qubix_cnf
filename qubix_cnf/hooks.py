@@ -31,25 +31,25 @@ app_license = "MIT"
 # include js in doctype views
 
 
-doctype_js = {
-	"Sales Order" : [
-		"public/js/sales_order.js",
-	],
-	"Delivery Note" : [
-		"public/js/delivery_note.js",
-	],
- 	"Purchase Invoice" : [
-		"public/js/purchase_invoice.js",
-		],
-  	"Sales Invoice" : [
-		"public/js/sales_invoice.js",
-		],
-    "Payment Entry" : [
-		"public/js/payment_entry.js",
-		],
+# doctype_js = {
+# 	"Sales Order" : [
+# 		"public/js/sales_order.js",
+# 	],
+# 	"Delivery Note" : [
+# 		"public/js/delivery_note.js",
+# 	],
+#  	"Purchase Invoice" : [
+# 		"public/js/purchase_invoice.js",
+# 		],
+#   	"Sales Invoice" : [
+# 		"public/js/sales_invoice.js",
+# 		],
+#     "Payment Entry" : [
+# 		"public/js/payment_entry.js",
+# 		],
  
 
-	}
+# 	}
 
 
 # doctype_js = {"doctype" : "public/js/doctype.js"}
@@ -160,7 +160,7 @@ doc_events = {
 		"on_update": "qubix_cnf.qubix_cnf.doctype.qubix_integration_setting.qubix_integration_setting.sync_master",		
 	},
     "Customer": {
-		"on_update": "qubix_cnf.qubix_cnf.doctype.qubix_integration_setting.qubix_integration_setting.sync_master",		
+		"on_update": "qubix_cnf.qubix_cnf.doctype.qubix_integration_setting.qubix_integration_setting.sync_customer_master",		
 	},
     "Customer Group": {
 		"on_update": "qubix_cnf.qubix_cnf.doctype.qubix_integration_setting.qubix_integration_setting.sync_master",		
@@ -175,6 +175,9 @@ doc_events = {
 		"on_update": "qubix_cnf.qubix_cnf.doctype.qubix_integration_setting.qubix_integration_setting.sync_master",		
 	},
     "Sales Person": {
+		"on_update": "qubix_cnf.qubix_cnf.doctype.qubix_integration_setting.qubix_integration_setting.sync_master",		
+	},
+     "GST HSN Code": {
 		"on_update": "qubix_cnf.qubix_cnf.doctype.qubix_integration_setting.qubix_integration_setting.sync_master",		
 	},
 }
@@ -200,7 +203,21 @@ doc_events = {
 #		"qubix_cnf.tasks.monthly"
 #	],
 # }
-
+fixtures = [
+    {
+        "doctype": "Custom Field",
+        "filters": [
+            [
+                "name",
+                "in",
+                [
+                    "Customer Group-is_synch",
+                  
+                ],
+            ]
+        ],
+    },
+]        
 # Testing
 # -------
 

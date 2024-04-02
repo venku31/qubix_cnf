@@ -212,6 +212,7 @@ fixtures = [
                 "in",
                 [
                     "Customer Group-is_synch",
+                    "Customer-is_sync",
                   
                 ],
             ]

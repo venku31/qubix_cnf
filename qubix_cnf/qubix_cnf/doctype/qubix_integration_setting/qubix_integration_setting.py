@@ -112,8 +112,7 @@ def sync_customer_master(self, method):
     if doc.get("amended_from"):
         return
     is_sync = frappe.db.get_value('Customer Group',{"name":doc.get("customer_group")},'is_synch')
-    print("//////////",is_sync)
-    if is_sync == 1:
+    if self.is_sync == 1:
         kolom_parent = frappe.db.sql(""" SELECT COLUMN_NAME, DATA_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME='tab{}' """.format(self.doctype))
 
         kolom_child = frappe.db.sql(""" SELECT td.fieldname, td.options

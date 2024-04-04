@@ -213,6 +213,7 @@ fixtures = [
                 [
                     "Customer Group-is_synch",
                     "Customer-is_sync",
+                    "Item Group-is_sync",
                   
                 ],
             ]

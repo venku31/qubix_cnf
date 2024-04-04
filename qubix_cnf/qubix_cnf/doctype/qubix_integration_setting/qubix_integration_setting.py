@@ -51,7 +51,7 @@ def sync_master(self, method):
     # 	frappe.throw(str(tampungan))
     
     for rowkolom in kolom_parent:
-        if str(rowkolom[0]) != "docstatus" and str(rowkolom[0]) != "valuation_method" and str(rowkolom[0]) != "is_group":
+        if str(rowkolom[0]) != "docstatus" and str(rowkolom[0]) != "valuation_method" and str(rowkolom[0]) != "is_group" and str(rowkolom[0]) != "department":
             if str(doc.get(str(rowkolom[0]))) != "None" :
                 if str(rowkolom[1]) == "date" or str(rowkolom[1]) == "datetime" or str(rowkolom[1]) == "time" :
                     if not docu_tujuan:

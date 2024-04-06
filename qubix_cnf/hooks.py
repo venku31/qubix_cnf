@@ -166,7 +166,7 @@ doc_events = {
 		"on_update": "qubix_cnf.qubix_cnf.doctype.qubix_integration_setting.qubix_integration_setting.sync_master",		
 	},
     "Contact": {
-		"on_update": "qubix_cnf.qubix_cnf.doctype.qubix_integration_setting.qubix_integration_setting.sync_master",		
+		"on_update": "qubix_cnf.qubix_cnf.doctype.qubix_integration_setting.qubix_integration_setting.sync_address",		
 	},
 	"Batch": {
 		"on_update": "qubix_cnf.qubix_cnf.doctype.qubix_integration_setting.qubix_integration_setting.sync_batch_master",		
